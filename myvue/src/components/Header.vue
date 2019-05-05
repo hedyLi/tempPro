@@ -14,21 +14,17 @@
 				<a href="#" class="regiest">注册</a>
 			  </div></el-col>
 			</el-row> 
+		</div>  
+		<div class="row">
+			<ul class="nav">
+				<li class="active"><a href="#">沙发网</a></li> 
+				<li><a href="#">应用市场</a></li> 
+				<li><a href="#">客户端下载</a></li> 
+				<li><a href="#">安装教程</a></li> 
+				<li><a href="#">产品库</a></li>
+				<li><a href="#">开发者平台</a></li> 
+			</ul>
 		</div> 
-		<el-row :gutter="24">
-				<el-col :span="24">
-					<div class="row">
-						<ul class="nav">
-							<li class="active"><a href="#">沙发网</a></li> 
-							<li><a href="#">应用市场</a></li> 
-							<li><a href="#">客户端下载</a></li> 
-							<li><a href="#">安装教程</a></li> 
-							<li><a href="#">产品库</a></li>
-							<li><a href="#">开发者平台</a></li> 
-						</ul>
-					</div>
-				</el-col>
-			</el-row>
 	</div>
 </template>
 
@@ -40,7 +36,7 @@
 		width: 1200px;
 		height: 50px;
 		margin: 0 auto;
-		padding: 15px;
+		padding: 15px 0;
 	} 
 	.container .logo {
 		width: 180px;
