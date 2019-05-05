@@ -23,7 +23,7 @@
 				<li><a href="#">安装教程</a></li> 
 				<li><a href="#">产品库</a></li>
 				<li><a href="#">开发者平台</a></li> 
-			</ul>
+			</ul>  
 		</div> 
 	</div>
 </template>
