@@ -5,6 +5,7 @@ import Vue from 'vue'
 //import element-ui相关
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import '@/lib/css/font-awesome.css';
 
 import App from './App'
 import router from './router'
