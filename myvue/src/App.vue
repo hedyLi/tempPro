@@ -24,6 +24,9 @@ export default {
 	padding: 0;
 	list-style: none;
 }
+a{
+	text-decoration: none;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -32,4 +35,11 @@ export default {
   color: #2c3e50;
   /*margin-top: 60px;*/
 }
+	.container{
+		width: 1200px;	
+			/*height: 50px;*/
+		margin: 0 auto;
+		padding: 15px 0;
+		overflow: hidden;
+	} 
 </style>
