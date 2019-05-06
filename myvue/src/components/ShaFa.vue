@@ -1,7 +1,12 @@
 <template>
   <div class="hello">
+  	<br />
+  	<br />
+  <br />    
       沙发网
-        
+   <br />
+   <br />
+   <br />
   </div>
 </template>
 

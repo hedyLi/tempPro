@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="header">
 		<div class="container">
 			<el-row :gutter="24">
 			  <el-col :span="12"><div class="grid-content1">
@@ -18,10 +18,31 @@
 		<div class="row">
 			<ul class="nav">
 				<li class="active"><a href="#">沙发网</a></li> 
-				<li><a href="#">应用市场</a></li> 
-				<li><a href="#">客户端下载</a></li> 
+				<li><a href="#">应用市场</a>
+					<ul class="subnav">
+						<li><a href="#">影视点播</a></li>
+						<li><a href="#">电视直播</a></li>
+						<li><a href="#">软件应用</a></li>
+						<li><a href="#">电视游戏</a></li>
+						<li><a href="#">最热</a></li>
+						<li><a href="#">专题</a></li>
+					</ul> 
+				</li> 
+				<li><a href="#">客户端下载</a>
+					<ul class="subnav">
+						<li><a href="#">沙发管家</a></li>
+						<li><a href="#">沙发桌面</a></li>
+						<li><a href="#">沙发电视精灵</a></li> 
+					</ul> 
+				</li> 
 				<li><a href="#">安装教程</a></li> 
-				<li><a href="#">产品库</a></li>
+				<li><a href="#">产品库</a>
+					<ul class="subnav">
+						<li><a href="#">智能电视</a></li>
+						<li><a href="#">电视盒子</a></li>
+						<li><a href="#">投影仪</a></li>
+					</ul> 
+				</li>
 				<li><a href="#">开发者平台</a></li> 
 			</ul>  
 		</div> 
@@ -31,13 +52,7 @@
 <script>
 </script>
 
-<style> 
-	.container{
-		width: 1200px;
-		height: 50px;
-		margin: 0 auto;
-		padding: 15px 0;
-	} 
+<style>  
 	.container .logo {
 		width: 180px;
 	} 
@@ -53,10 +68,10 @@
 		height: 30px;
 		width: 180px;
 		text-indent: 10px;
-		color: #eee;
+		/*color: #eee;*/
 		box-shadow: inset 0 0 1px rgba(0,0,0,.075);
 		border: 1px solid rgba(0,0,0,.075);
-		outline: none;
+		/*outline: none;*/
 		font-size: 14px;
 	}
 	.grid-content2 .search{
@@ -87,20 +102,49 @@
 		text-decoration: none;
 		font-size: 18px;
 	}
-	.nav li{
-		padding: 0 20px;
+	.nav>li{
+		padding: 0 30px;
+		position: relative;
 	}
-	.nav li.active{
+	.nav>li.active{
 		background: rgb(0, 0, 0);
 	}
-	.nav li.active a{
+	.nav>li.active a{
 		color: rgb(255, 128, 0);
-	}
-	.nav li:hover{
-		background: rgb(0, 0, 0);
-	}
-	.nav li:hover a{
-		color: rgb(255, 128, 0);
-	}
+	} 
 	
+	.subnav{
+		position: absolute;
+		left: 0;
+		top: 50px;	
+		background: rgb(238, 238, 238);
+		width: 100%;
+		display: none;
+		box-shadow: 0 3px 10px rgba(0,0,0,.175);
+		border:1px solid rgb(180, 180, 180);
+		/*border-top: none;*/
+	}
+	.subnav li{
+		line-height: 30px;
+		text-align: left;
+		padding-left:25px;
+		box-sizing: border-box;
+	}
+	.subnav li a{
+		font-size: 13px;
+		color: rgb(61, 61, 61);
+	}
+	.nav>li:hover{
+		background: rgb(0, 0, 0);
+	}
+	.nav>li:hover>a{
+		color: rgb(255, 128, 0);
+	}
+	.nav>li:hover .subnav{
+		display: block; 
+	}
+	.subnav>li:hover{
+		background-color: rgb(250, 250, 250);
+		
+	} 
 </style>
