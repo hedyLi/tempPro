@@ -10,15 +10,15 @@
 					<input type="text" placeholder="搜索电视应用" />
 					<a href="#" class="search"><i class="fa fa-search"></i></a>
 				</form>
-			  	<a href="#" class="login">登录</a> &nbsp;&nbsp; <a href="">|</a>&nbsp;&nbsp;&nbsp;
-				<a href="#" class="regiest">注册</a>
+				<router-link to='/Login' class="login">登录</router-link> &nbsp;&nbsp; <a href="">|</a>&nbsp;&nbsp;&nbsp;
+				<router-link to='/Register' class="regiest">注册</router-link>
 			  </div></el-col>
 			</el-row> 
 		</div>  
 		<div class="row">
 			<ul class="nav">
 				<li class="active"><a href="#">沙发网</a></li> 
-				<li><a href="#">应用市场</a>
+				<li><router-link to="/AppStore">应用市场</router-link>
 					<ul class="subnav">
 						<li><a href="#">影视点播</a></li>
 						<li><a href="#">电视直播</a></li>
