@@ -123,6 +123,7 @@
 		box-shadow: 0 3px 10px rgba(0,0,0,.175);
 		border:1px solid rgb(180, 180, 180);
 		/*border-top: none;*/
+		z-index: 5;
 	}
 	.subnav li{
 		line-height: 30px;

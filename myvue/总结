@@ -1,0 +1,15 @@
+·使用less需要步骤：
+  a.页面style中配置lang='less'
+  b.安装cnpm install less less-loader --save-dev 
+  【需要重启打开 npm run dev】
+  
+·elementUI的使用
+  a. main.js中引入
+   //import element-ui相关
+	 import ElementUI from 'element-ui';
+     import 'element-ui/lib/theme-chalk/index.css';
+		
+	 Vue.use(ElementUI);
+	 
+·vue中无法解析ico图标
+ 修改build/webpack.base.conf.js   test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
