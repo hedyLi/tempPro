@@ -4,6 +4,7 @@ import ShaFa from '@/components/ShaFa'
 import Login from '@/pages/login/Login'
 import Register from '@/pages/register/Register'
 import AppStore from '@/pages/appStore/appStore'
+import TVGames from "@/pages/TVGames/tvGames";
 
 Vue.use(Router)
 
@@ -25,6 +26,10 @@ export default new Router({
       path:'/AppStore',
       name:'appStore',
       component:AppStore
+    },{
+      path:'/TVGames',
+      name:'tVGames',
+      component:TVGames
     }
   ]
 })

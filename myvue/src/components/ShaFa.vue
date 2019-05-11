@@ -672,7 +672,6 @@ export default {
  	  			min-height: 35px; 
  	  			text-align: left;
  	  			border-bottom: 1px dashed lightgray;
- 	  			 
  	  		}
  	  		li:nth-of-type(1){
  	  			.devicetitle{
