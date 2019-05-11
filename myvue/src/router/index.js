@@ -9,6 +9,7 @@ import Tv from '@/pages/product/tv'
 import Box from '@/pages/product/box'
 import Projector from '@/pages/product/projector'
 
+import TVGames from "@/pages/TVGames/tvGames";
 
 Vue.use(Router)
 
@@ -48,7 +49,7 @@ export default new Router({
     },{
       path:'/product/projector',
       name:'projector',
-      component:Projector    	
+      component:Projector 
     }
   ]
 })
