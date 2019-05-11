@@ -17,7 +17,9 @@
 		</div>  
 		<div class="row">
 			<ul class="nav">
-				<li class="active"><a href="#">沙发网</a></li> 
+				<li class="active"> 
+					<router-link to="/">沙发网</router-link>
+				</li> 
 				<li><router-link to="/AppStore">应用市场</router-link>
 					<ul class="subnav">
 						<li><a href="#">影视点播</a></li>
@@ -36,11 +38,11 @@
 					</ul> 
 				</li> 
 				<li><a href="#">安装教程</a></li> 
-				<li><a href="#">产品库</a>
+				<li><router-link to="/product">产品库</router-link> 
 					<ul class="subnav">
-						<li><a href="#">智能电视</a></li>
-						<li><a href="#">电视盒子</a></li>
-						<li><a href="#">投影仪</a></li>
+						<li><router-link to='/product/tv'>智能电视</router-link></li>
+						<li><router-link to='/product/box'>电视盒子</router-link></li>
+						<li><router-link to='/product/projector'>投影仪</router-link></li>
 					</ul> 
 				</li>
 				<li><a href="#">开发者平台</a></li> 

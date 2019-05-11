@@ -41,5 +41,5 @@ a{
 		margin: 0 auto;
 		padding: 15px 0;
 		overflow: hidden;
-	} 
+	}  
 </style>

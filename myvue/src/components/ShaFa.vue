@@ -127,12 +127,12 @@
 	        		<div class="apphide">
 				  				<h3 class="title">{{item.title}}</h3>
 				  				<p class="desc">{{item.desc}}</p>
-				  				<p class="start"> <el-rate
+				  				<p class="start"> 评分：<el-rate
 										  v-model="item.start"
-										  disabled
-										 
+										  disabled 
 										  text-color="#ff9900"
-										  score-template="{value}">
+										  score-template="{value}"
+										   >
 										</el-rate>
 				  				</p>
 				  				<button class="detail">详情</button>
@@ -175,7 +175,7 @@
 									    	 		<a href="#" class="devicetitle">
 									    	 			<span class="num">{{index+1}}</span>
 									    	 			<span class="title">{{item.name}}</span>
-									    	 			<span class="price">{{item.price}}</span>
+									    	 			<span class="price">{{item.price | formatmoney}}</span>
 									    	 		 
 									    	 		</a>
 									    	 		<div class="desc" v-show="item.iscur" > 
@@ -196,7 +196,7 @@
 									    	 		<a href="#" class="devicetitle">
 									    	 			<span class="num">{{index+1}}</span>
 									    	 			<span class="title">{{item.name}}</span>
-									    	 			<span class="price">{{item.price}}</span>
+									    	 			<span class="price">{{item.price | formatmoney}}</span>
 									    	 		 
 									    	 		</a>
 									    	 		<div class="desc" v-show="item.iscur" > 
@@ -271,6 +271,11 @@ export default {
       	{name:'小米盒子3代 增强版',imgsrc:'hotdevice207.png',price:419,iscur:false,desc:'MT8693 2核Cortex-A72 + 4核Cortex-A53 64位 2.0GHz, 2GB LPDDR3 双通道, 通过Google CTS认证的安卓5.1系统, 4K(3840 X 2160), USB 2.0 x 2个；HDMI 2.0 x 1个, 长度：100mm 宽度：100mm 厚度：25mm 脚垫厚度：0.8mm, 190g'}
       ]
     }
+  },
+  filters:{
+  	formatmoney(val){
+  		return '￥'+val;
+  	}
   },
   methods:{
   	  //热门设备推荐-面板切换事件
@@ -557,10 +562,15 @@ export default {
 		 			}
 		 			.start{
 		 					height: 35px;
-		 					line-height: 35px; 
+		 					line-height: 32px; 
 		 					color:#ffb366; 
-		 					font-size: 15px; 
-		 					text-align: left;
+		 					font-size: 12px; 
+		 					text-align: left;  
+		 					margin-top: 5px;
+		 					>div{
+		 						display: inline-block; 
+		 					}
+		 					
 		 			}
 		 			.detail{
 		 				text-align: center;

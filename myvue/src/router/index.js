@@ -4,6 +4,11 @@ import ShaFa from '@/components/ShaFa'
 import Login from '@/pages/login/Login'
 import Register from '@/pages/register/Register'
 import AppStore from '@/pages/appStore/appStore'
+import Product from '@/pages/product/product'
+import Tv from '@/pages/product/tv'
+import Box from '@/pages/product/box'
+import Projector from '@/pages/product/projector'
+
 
 Vue.use(Router)
 
@@ -25,6 +30,25 @@ export default new Router({
       path:'/AppStore',
       name:'appStore',
       component:AppStore
+    },{
+    	path:'/product',
+    	name:'product',
+    	component:Product
+//  	children:[
+//  	  {path:'box',component:Box}
+//  	]
+    },{
+      path:'/product/tv',
+      name:'tv',
+      component:Tv    	
+    },{
+      path:'/product/box',
+      name:'box',
+      component:Box    	
+    },{
+      path:'/product/projector',
+      name:'projector',
+      component:Projector    	
     }
   ]
 })

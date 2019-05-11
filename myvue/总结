@@ -13,3 +13,15 @@
 	 
 ·vue中无法解析ico图标
  修改build/webpack.base.conf.js   test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
+ 
+ 
+·vue中父传子 传递 对象数组 ，接收时：
+子：
+			breadlist:{
+				type:Array,
+				default:()=>[],
+				required:true
+			}
+父：
+       <Breadcrumb :breadlist="breadlist" ></Breadcrumb> 
+   
