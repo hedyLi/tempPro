@@ -8,6 +8,7 @@ import Product from '@/pages/product/product'
 import Tv from '@/pages/product/tv'
 import Box from '@/pages/product/box'
 import Projector from '@/pages/product/projector'
+import About from '@/pages/About/about'
 
 import TVGames from "@/pages/TVGames/tvGames";
 
@@ -50,6 +51,10 @@ export default new Router({
       path:'/product/projector',
       name:'projector',
       component:Projector 
+    },{
+    	path:'/about',
+    	name:'about',
+    	component:About
     }
   ]
 })

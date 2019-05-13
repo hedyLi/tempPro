@@ -16,12 +16,60 @@
  
  
 ·vue中父传子 传递 对象数组 ，接收时：
-子：
-			breadlist:{
+子： breadlist:{
 				type:Array,
 				default:()=>[],
 				required:true
 			}
-父：
-       <Breadcrumb :breadlist="breadlist" ></Breadcrumb> 
+父： <Breadcrumb :breadlist="breadlist" ></Breadcrumb> 
+
+       
+·百度地图使用:http://lbsyun.baidu.com/index.php?title=jspopular3.0/guide/getkey
+  
+   或者百度搜索 ：  百度开发人员手册...
+   
+ 四个步骤：第一步注册百度账号，第二步申请成为百度开发者，第三步获取服务密钥（ak）,第四步使用相关服务 
+
+问题解决： console提出警告：A parser-blocking, cross site (i.e. different eTLD+1) script,
+
+   把api引用url里面的 api 改为 getscript
+<script src="http://api.map.baidu.com/api?v=2.0&ak=你申请的ak"></script>
+api 改为 getscript以后
+<script src="http://api.map.baidu.com/getscript?v=2.0&ak=你申请的ak"></script>
+
+·二维码使用
+  cnpm install qrcode --save-dev
+  
+  
+·接口数据模拟综合
+ 1.配置config下index.js
+	 proxyTable:{
+ 			//connect-mock-middleware工具使用
+	  	'/api':{
+	  		target:'http://127.0.0.1:3721',
+	  		changeOrigin:true,
+	  		secure:false
+	  	}
+     }
+  2.编写接口文件mock>post>api_product_recommend.js
+  3.snail mock工具使用	
+    3.1安装snail-cline
+       cnpm install -g snail-cline
+    3.2开启snail mock
+                 执行 snail mock
+                 执行成功后，就会显示第一步配置的地址。
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
