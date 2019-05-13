@@ -141,19 +141,10 @@
     <div class="appTypeBox">
       <el-row :gutter="25">
         <el-col :span="18">
-          <!-- <div class="appType">
-            <el-tabs type="card">
-              <el-tab-pane v-for="(pitem,pindex) in MoviesArr" :label="pitem.type" :key='pindex'>
-                <div class="appType_Content" v-for='citem in pitem.arr'>
-
-                </div>
-              </el-tab-pane>
-            </el-tabs>
-            <span><a href=""> 查看全部影视点播类应用>></a></span>
-          </div>-->
           <apptab :appArr="AppArray1" more="查看全部影视点播类应用>>"></apptab>
           <apptab :appArr="AppArray2" more="查看全部新闻阅读类应用>>"></apptab>
           <apptab :appArr="AppArray1" more="查看全部影视点播类应用>>"></apptab>
+          <show-App :appArr='allAppArr' title='安卓电视最新应用' more='查看全部最新应用>>'></show-App>
         </el-col>
         <el-col :span="6">
           <app-ranking :RankArr='movieRank' title='本周影视下载排行'></app-ranking>
@@ -168,9 +159,10 @@
 <script>
 import ElementUI from "element-ui";
 import apptab from "./appTabs";
-import appRanking from './ranking'
+import appRanking from './ranking';
+import showApp from './showApp'
 export default {
-  components: { apptab,appRanking },
+  components: { apptab,appRanking,showApp },
   data() {
     return {
       header_rightlist: [
@@ -445,7 +437,19 @@ export default {
         }
       ],
       movieRank:['腾讯视频TV版','爱奇艺TV','优酷TV','电视猫视频','芒果TV','HDP直播','电视家3.0','哔哩哔哩TV版','电视家2.0','虎牙TV版'],
-      appRank:['电视必备','沙发桌面','QQ影音TV版','乐视投屏','UC浏览器TV版','电视家浏览器','酷狗音乐','沙发助手','百度电视助手','全民K歌']
+      appRank:['电视必备','沙发桌面','QQ影音TV版','乐视投屏','UC浏览器TV版','电视家浏览器','酷狗音乐','沙发助手','百度电视助手','全民K歌'],
+      allAppArr:[{ title: "华广智屏", download: 13, start: 1, imgSrc: "tabs_lives/tool01.ico", tags: [] },
+            { title: "橙子投屏", download: 1595, start: 2, imgSrc: "tabs_lives/tool02.ico", tags: [] },
+            { title: "多动屏", download: 9389, start: 3, imgSrc: "tabs_lives/tool03.ico", tags: [] },
+            { title: "一键上屏", download: 5789, start: 2, imgSrc: "tabs_lives/tool04.ico", tags: [] },
+            { title: "TeamBoard", download: 2773, start: 3, imgSrc: "tabs_lives/tool05.ico", tags: [] },
+            { title: "谈吧", download: 215, start: 2, imgSrc: "tabs_lives/tool06.ico", tags: [] },
+            { title: "漫漫漫画", download: 38021, start: 3, imgSrc: "tabs_lives/read01.ico", tags: [] },
+            { title: "小小优趣", download: 4413, start: 4, imgSrc: "tabs_lives/child02.ico", tags: ['0-3岁','4-6岁'] },
+            { title: "格灵课堂", download: 9214, start: 3, imgSrc: "tabs_lives/child03.ico", tags: ['课程辅导'] },
+            { title: "叫叫识字", download: 86681, start: 4, imgSrc: "tabs_lives/child04.ico", tags: ['0-3岁','儿童早教'] },
+            { title: "乐学教育", download: 660414, start: 4, imgSrc: "tabs_lives/child05.ico", tags: ['课程辅导'] },
+            { title: "贝瓦儿歌", download: 1000001, start: 4, imgSrc: "tabs_lives/child06.ico", tags: ['儿童早教','4-6岁'] }]
     };
   },
   methods: {
