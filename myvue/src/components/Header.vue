@@ -46,6 +46,9 @@
 					</ul> 
 				</li>
 				<li><a href="#">开发者平台</a></li> 
+				<li>
+					<router-link to="/about">关于我们</router-link>
+				</li> 
 			</ul>  
 		</div> 
 	</div>
