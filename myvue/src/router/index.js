@@ -23,7 +23,10 @@ export default new Router({
     },{
       path:'/Login',
       name:'login',
-      component:Login
+      component:Login,
+      meta:{
+        keepAlive:true
+      }
     },{
       path:'/Register',
       name:'register',
@@ -35,7 +38,8 @@ export default new Router({
     },{
     	path:'/product',
     	name:'product',
-    	component:Product
+      component:Product,
+      meta:{requireAuth:true}//添加了这个字段，表示进入这个路由之前都要验证
 //  	children:[
 //  	  {path:'box',component:Box}
 //  	]

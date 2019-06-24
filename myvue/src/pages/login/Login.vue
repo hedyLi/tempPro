@@ -9,6 +9,7 @@
         <el-input type="password" v-model="ruleForm.pass" autocomplete="off" placeholder="密码"></el-input>
       </el-form-item>
       <el-form-item>
+        <el-button type="text"></el-button>
         <el-row>
           <el-col :span="4">
             <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
@@ -63,15 +64,35 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           //输入正确进入这页面
-          alert("submit!");
+          let userName = this.ruleForm.userName;
+          let pwd = this.ruleForm.pass;
+          this.axios
+            .post("/api/user/login", { userName: userName, pwd: pwd })
+            .then(res => {
+              let token = userName + pwd;
+              let params = { token: token, userID: userName };
+              console.log('login----',res)
+              if (res.data.msg == "success") {
+                this.$store.commit("getUserInfo", params);
+                this.$router.push("/");
+              } else {
+                this.openMsg();
+              }
+            });
         } else {
-          console.log("error submit!!");
+          // 提示框
+          this.openMsg();
           return false;
         }
       });
     },
     toRegister() {
       this.$router.push({ path: "/Register" });
+    },
+    openMsg() {
+      this.$alert("登录失败！请重试", "提示", {
+        confirmButtonText: "确定"
+      });
     }
   }
 };
@@ -82,6 +103,7 @@ export default {
 .login_box {
   margin: 20px auto;
   width: 500px;
+  height: 282px;
   padding: 24px;
   border: 1px solid rgb(227, 227, 227);
   background-color: rgb(245, 245, 245);

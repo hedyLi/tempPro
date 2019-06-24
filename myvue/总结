@@ -58,9 +58,64 @@ api 改为 getscript以后
     3.2开启snail mock
                  执行 snail mock
                  执行成功后，就会显示第一步配置的地址。
-   
-   
-   
+
+·使用vuex状态管理
+    安装vuex  cnpm install Vuex --save
+    在src创建store文件夹，存放vuex代码
+  在main.js中引入vuex代码文件，然后在new vue里引用
+
+  state:数据
+  mutations：方法的集合                           
+  actions： 这里面定义的方法复杂从后端获取数据                                                          
+                                  
+                         4、  backend api(actions去请求的后端api接口)       
+                                  |
+                                  |  
+                                  |
+        2、 组件调用dispatch方法   |        6、使用commit 将数据给mutations
+          |————————————————————》3、5、actions ————————————》
+          |                                             |
+          |                                             |
+          |                                             |
+          |                                             |
+ 1、 vue component(组件)                           7、  mutations
+          |                                             |
+          |                                             |
+          |《———————————————— 8、 state  ——————————————  |
+                                     mutations定义的方法就会去修改state里的数据   
+           state的数据修改了，组件就可以使用了
+
+1、login.vue 点击登录，根据返回值（success/error）判断是否执行vuex 将用户信息进行全局存储
+2、如果success 就使用this.$store.commit()方法执行vuex的mutations中定义的方法
+将数据进行存储(因为浏览器刷新会重置vuex对象，所有需要将用户信息顺便存到sessionStorge中)
+2.1、main.js 使用router.beforeEach方法，这个方法作业是在每个页面跳转之前判断 进入这个页面是否需要用户登录
+3、在router.js 对需要用户登录才能进入的页面添加一个字段
+{
+    	path:'/product',
+    	name:'product',
+      component:Product,
+      meta:{requireAuth:true}//添加了这个字段，表示进入这个路由之前都要验证
+}
+
+前进刷新后退不刷新功能
+router文件的index中给需要的缓存不刷新的路由做一个配置，其中的keepAlive就是设置是否缓存这个组件视图
+{
+      path:'/Login',
+      name:'login',
+      component:Login,
+      meta:{
+        keepAlive:true 
+      }
+    }
+在App.vue中渲染试图的router-view做一些判断 v-if="$route.meta.keepAlive"
+<keep-alive>是Vue的内置组件，能在组件切换过程中将状态保留在内存中，防止重复渲染DOM。
+<keep-alive> 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。
+和 <transition> 相似，<keep-alive> 是一个抽象组件：它自身不会渲染一个 DOM 元素，也不会出现在父组件链中。
+
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
    
    
    
